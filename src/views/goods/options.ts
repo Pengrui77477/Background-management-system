@@ -1,0 +1,36 @@
+export const options = [
+    {
+        label:'goods_id',
+        prop:'goods_id'
+    },
+    {
+        label:'goods_name',
+        prop:'goods_name'
+    },
+    {
+        label:'goods_number',
+        prop:'goods_number'
+    },
+    {
+        label:'goods_weight',
+        prop:'goods_weight'
+    },
+    {
+        label:'goods_price',
+        prop:'goods_price'
+    },
+    
+    {
+        label:'add_time',
+        prop:'add_time'
+    },
+    {
+        label:'upd_time',
+        prop:'upd_time'
+    },
+    {
+        label:'action',
+        prop:'action',
+        width:200
+    },
+]

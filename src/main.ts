@@ -21,8 +21,9 @@ const app = createApp(App)
 for (let item in ElIcons) {
     app.component(item, ElIcons[item])
 }
-app.component('svg-icon', SvgIcon)
-app.use(createPinia())
-app.use(router)
-app.use(i18n)
+app
+    .component('svg-icon', SvgIcon)
+    .use(createPinia())
+    .use(router)
+    .use(i18n)
 app.mount('#app')

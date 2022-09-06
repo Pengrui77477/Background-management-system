@@ -72,7 +72,7 @@ const initGetUsersList = async () => {
     tableData.value = res.users
 }
 const handleSizeChange = (pagesize) => {
-    queryForm.pagesize = 1;
+    // queryForm.pagesize = 1;
     queryForm.pagesize = pagesize;
     initGetUsersList();
 }

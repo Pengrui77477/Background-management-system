@@ -2,6 +2,7 @@ import axios from "axios";
 import { ElMessage } from 'element-plus';
 import {diffTokenTime} from '@/utils/auth';
 import useStore from '@/stores/index'
+import NProgress from 'nprogress';
 
 declare module 'axios' {
     interface AxiosInstance {
@@ -17,6 +18,7 @@ const service = axios.create({
 //请求拦截器
 service.interceptors.request.use(config =>{
     const {app} = useStore();
+    NProgress.start();
     if(localStorage.getItem('token')){
         if(diffTokenTime()){
             app.logout()
@@ -31,6 +33,7 @@ service.interceptors.request.use(config =>{
 //响应拦截器
 service.interceptors.response.use(res => {
     // console.log(res);
+    NProgress.done();
     const { data, meta } = res.data;
     if (meta.status === 200 || meta.status === 201) {
         return data

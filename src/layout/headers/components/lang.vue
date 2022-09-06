@@ -21,9 +21,6 @@ const {app} = useStore();
 const i18n = useI18n();
 
 const currentLanguage = computed(() => {
-    // console.log(i18n.locale.value);
-    console.log(i18n.locale.value);
-    
     return i18n.locale.value === 'zh' 
 })
 

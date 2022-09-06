@@ -20,10 +20,13 @@ export default {
   },
   login: {
     title: 'user login',
-    btnTitle: 'login'
+    btnTitle: 'login',
+    sure:'sure'
   },
   dialog: {
-    deleteTitle: 'Are you sure you want to delete the user '
+    deleteTitle: 'Are you sure you want to delete the user?',
+    deleteGoods: 'Are you sure you want to delete the goods?',
+    closeDialog: 'Are you sure to close this dialog?'
   },
   table: {
     id:'id',
@@ -49,6 +52,18 @@ export default {
     action: 'action',
     add_roles:'Add Roles',
     placeholder: 'Please enter a user id to search for'
+  },
+  goods:{
+    goods_id:'id',
+    goods_name:'goods_name',
+    goods_price:'goods_price',
+    goods_number:'goods_number',
+    goods_weight:'goods_weight',
+    add_time:'add_time',
+    upd_time:'upd_time',
+    action: 'action',
+    add_goods:'add_goods',
+    placeholder: 'Please enter a goods to search for'
   },
   message: {
     updeteSuccess: 'update successfully'

@@ -23,7 +23,10 @@ export default {
     btnTitle: '登录'
   },
   dialog: {
-    deleteTitle: '确定要删除用户'
+    deleteTitle: '确定要删除该用户？',
+    deleteGoods: '确定要删除该商品？',
+    closeDialog:'确定关闭对话框？',
+    sure:'确定'
   },
   table: {
     id:'id',
@@ -49,6 +52,18 @@ export default {
     action: '操作',
     add_roles:'添加角色',
     placeholder: '请输入搜索的角色id'
+  },
+  goods:{
+    goods_id:'id',
+    goods_name:'商品名称',
+    goods_price:'价格',
+    goods_number:'商品数量',
+    goods_weight:'重量',
+    add_time:'添加时间',
+    upd_time:'更新时间',
+    action: '操作',
+    add_goods:'添加商品',
+    placeholder: '请输入搜索的商品'
   },
   message: {
     updeteSuccess: '更新成功'

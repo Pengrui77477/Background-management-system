@@ -8,6 +8,8 @@ import '@/router/permission'
 
 import 'element-plus/dist/index.css'
 import '@/assets/styles/index.scss';
+import 'element-plus/theme-chalk/dark/css-vars.css'
+// import './styles/dark/css-vars.css'
 
 import 'virtual:svg-icons-register'
 import SvgIcon from '@/icons/index'

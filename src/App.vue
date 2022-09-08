@@ -6,6 +6,9 @@
 
 </script>
 
-<style scoped lang="scss">
-
+<style lang="scss">
+:deep(.dark){
+  background-color: #222;
+  color: #fff;
+}
 </style>

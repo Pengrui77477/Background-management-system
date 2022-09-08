@@ -3,6 +3,7 @@
     <Hamburger></Hamburger>
     <BreadcrumbVue></BreadcrumbVue>
     <div class="navbar-right">
+      <svg-icon :icon=" mode ==='light' ? 'sun' :'moon'" class="navbar-item" @click="changeColorMode"></svg-icon>
       <driver class="navbar-item"></driver>
       <screenFullVue class="navbar-item"></screenFullVue>
       <langVue class="navbar-item langIcon"></langVue>
@@ -18,14 +19,21 @@ import avatorVue from './components/avator.vue';
 import langVue from './components/lang.vue';
 import screenFullVue from './components/screenFull.vue';
 import driver from './components/driver/index.vue'
+import { useColorMode } from '@vueuse/core'
+
+
+
+const mode = useColorMode();
+const changeColorMode =()=>{
+  
+  mode.value = mode.value ==='light' ? 'dark' : 'light';
+}
 </script>
 
 <style scoped lang='scss'>
 .navbar {
-  //   width: 100%;
   height: 60px;
   overflow: hidden;
-  background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   padding: 0 16px;
   display: flex;

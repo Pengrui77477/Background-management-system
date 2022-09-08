@@ -32,7 +32,6 @@ const initDriver = ()=>{
     });
 }
 watchLang(initDriver);
-
 const handleGuide =()=>{
     driver.defineSteps(steps(t));
     driver.start();

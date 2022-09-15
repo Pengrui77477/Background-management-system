@@ -53,6 +53,12 @@ export default {
     add_roles:'Add Roles',
     placeholder: 'Please enter a user id to search for'
   },
+  rights:{
+    id:'id',
+    authName:'authName',
+    level:'level'
+
+  },
   goods:{
     goods_id:'id',
     goods_name:'goods_name',

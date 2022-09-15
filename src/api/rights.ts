@@ -1,9 +1,9 @@
 import request from './request';
 
-export const getAllRights = (data) => {
+export const getAllRights = () => {
     return request({
-        url:`/rights/${data}`,
-        data
+        url:`/rights/list`,
+        
     })
 }
 export const getAllRoles = () => {

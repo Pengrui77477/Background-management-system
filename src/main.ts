@@ -12,8 +12,8 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 // import './styles/dark/css-vars.css'
 
 import 'virtual:svg-icons-register'
-import SvgIcon from '@/icons/index'
-
+// import SvgIcon from '@/icons/index'
+import SvgIcon from '@/components/SvgIcon/index.vue';
 import * as ElIcons from '@element-plus/icons-vue'
 import i18n from './i18n'
 
@@ -28,4 +28,4 @@ app
     .use(createPinia())
     .use(router)
     .use(i18n)
-app.mount('#app')
+    .mount('#app')

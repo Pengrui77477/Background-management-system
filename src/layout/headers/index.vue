@@ -4,9 +4,9 @@
     <BreadcrumbVue></BreadcrumbVue>
     <div class="navbar-right">
       <svg-icon :icon=" mode ==='light' ? 'sun' :'moon'" class="navbar-item" @click="changeColorMode"></svg-icon>
+      <langVue class="navbar-item langIcon"></langVue>
       <driver class="navbar-item"></driver>
       <screenFullVue class="navbar-item"></screenFullVue>
-      <langVue class="navbar-item langIcon"></langVue>
       <avatorVue class="navbar-item"></avatorVue>
     </div>
   </div>

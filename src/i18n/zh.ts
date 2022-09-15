@@ -53,6 +53,12 @@ export default {
     add_roles:'添加角色',
     placeholder: '请输入搜索的角色id'
   },
+  rights:{
+    id:'id',
+    authName:'权限说明',
+    level:'权限层级'
+
+  },
   goods:{
     goods_id:'id',
     goods_name:'商品名称',

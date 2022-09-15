@@ -10,7 +10,7 @@
     </el-row>
     <el-table :data="resData" style="width: 100%" height="600">
       <el-table-column :prop="item.prop" :label="$t(`goods.${item.label}`)" v-for="(item, index) in options"
-        :key="index">
+        :key="index" :width="item.width">
         <template #default="{ row }" v-if="item.prop === `action`">
           <el-button type="primary" :icon="Setting" @click="handleEditGoods(row)" />
           <!-- <el-button type="info" :icon="Setting" /> -->

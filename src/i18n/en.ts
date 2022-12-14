@@ -72,7 +72,8 @@ export default {
     placeholder: 'Please enter a goods to search for'
   },
   message: {
-    updeteSuccess: 'update successfully'
+    updeteSuccess: 'update successfully',
+    addSuccess:'add successfully'
   },
   driver: {
     doneBtnText: 'done',

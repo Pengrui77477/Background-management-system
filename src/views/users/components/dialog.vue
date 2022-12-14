@@ -91,11 +91,18 @@ const handleDialog = () => {
 const handleConfirm = () => {
     ruleForm.value.validate(async (valid, fields) => {
         if (valid) {
-            props.isAddUser ? await addUser(form.value) : await editUser(form.value)
-            ElMessage({
-                message: i18n.global.t('message.updeteSuccess'),
-                type: 'success',
-            });
+            props.isAddUser ? await addUser(form.value).then(() => {
+                ElMessage({
+                    message: i18n.global.t('message.addSuccess'),
+                    type: 'success',
+                });
+            }) : await editUser(form.value).then(() => {
+                ElMessage({
+                    message: i18n.global.t('message.updeteSuccess'),
+                    type: 'success',
+                });
+            })
+
             emit('initUserList')
             handleDialog()
         } else {
@@ -113,4 +120,5 @@ watch(() => props.dialogTableValue, () => {
 </script>
 
 <style scoped lang='scss'>
+
 </style>

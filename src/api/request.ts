@@ -1,14 +1,14 @@
 import axios from "axios";
 import { ElMessage } from 'element-plus';
-import {diffTokenTime} from '@/utils/auth';
+import { diffTokenTime } from '@/utils/auth';
 import useStore from '@/stores/index'
 import NProgress from 'nprogress';
 
 declare module 'axios' {
     interface AxiosInstance {
-      (config: AxiosRequestConfig): Promise<any>
+        (config: AxiosRequestConfig): Promise<any>
     }
-  }
+}
 
 const service = axios.create({
     baseURL: import.meta.env.VITE_APP_BASE_URL,
@@ -16,20 +16,20 @@ const service = axios.create({
 })
 
 //请求拦截器
-service.interceptors.request.use(config =>{
-    const {app} = useStore();
+service.interceptors.request.use(config => {
+    const { app } = useStore();
     NProgress.start();
-    if(localStorage.getItem('token')){
-        if(diffTokenTime()){
+    if (localStorage.getItem('token')) {
+        if (diffTokenTime()) {
             app.logout()
             return Promise.reject(new Error('token 失效'))
         }
     }
-    config.headers.Authorization  = localStorage.getItem('token');
+    config.headers.Authorization = localStorage.getItem('token');
     return config
-},err => Promise.reject(new Error(err)))
+}, err => Promise.reject(new Error(err)))
 
- 
+
 //响应拦截器
 service.interceptors.response.use(res => {
     // console.log(res);

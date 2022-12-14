@@ -1,5 +1,5 @@
 <template>
-    <div class="hamburger-container" @click="changeHamburger" id="hamburger">
+    <div class="hamburger-container" @click="app.changeSiderBar()" id="hamburger">
         <svg-icon :icon="icon"></svg-icon>
     </div>
 </template>
@@ -9,11 +9,8 @@ import useStore from '@/stores/index';
 import { computed } from 'vue';
 const {app} = useStore()
 
-const changeHamburger = ()=>{
-    app.changeSiderBar()
-}   
 const icon = computed(()=>{
-    return app.siderType == true ? 'hamburger-opened' :'hamburger-closed'
+    return app.siderType ? 'hamburger-opened' :'hamburger-closed'
 })
 
 </script>

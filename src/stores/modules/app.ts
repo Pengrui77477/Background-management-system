@@ -2,13 +2,13 @@ import { defineStore } from "pinia";
 import { login as loginApi } from '@/api/login'
 import type { User, Form } from '@/type/user'
 import router from '@/router/index'
-import {setTokenTime} from '@/utils/auth'
+import { setTokenTime } from '@/utils/auth'
 
 export default defineStore("app", {
     state() {
         return {
             token: localStorage.getItem('token'),
-            siderType:true,
+            siderType: true,
             lang: localStorage.getItem('lang') || 'zh'
         };
     },
@@ -29,15 +29,15 @@ export default defineStore("app", {
                 })
             })
         },
-        logout(){
+        logout() {
             this.token = '';
             localStorage.clear()
             router.replace('/login')
         },
-        changeSiderBar(){
+        changeSiderBar() {
             this.siderType = !this.siderType
         },
-        changeLang(lang:string){
+        changeLang(lang: string) {
             this.lang = lang
         }
     },

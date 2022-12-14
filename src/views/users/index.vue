@@ -5,7 +5,7 @@
                 <el-input :placeholder="$t('table.placeholder')" clearable v-model="queryForm.query"></el-input>
             </el-col>
             <el-button type="primary" :icon="Search" @click="initGetUsersList">{{ $t('table.search') }}</el-button>
-            <el-button type="primary" :icon="Search" @click="handleDialogValue(null)">{{ $t('table.adduser') }}
+            <el-button type="primary" :icon="Search" @click="handleDialogValue('')">{{ $t('table.adduser') }}
             </el-button>
         </el-row>
         <el-table :data="tableData" stripe style="width: 100%">

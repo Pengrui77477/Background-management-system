@@ -29,7 +29,8 @@
       layout="total, sizes, prev, pager, next, jumper" :total="total">
     </el-pagination>
   </el-card>
-  <dialogVue v-model="dialogVisible" :goodsId="goodsId" :dialogVisible="dialogVisible" @handle-dialog="handleDialog" v-if="dialogVisible"></dialogVue>
+  <dialogVue v-model="dialogVisible" :goodsId="goodsId" :dialogVisible="dialogVisible" @handle-dialog="handleDialog"
+    v-if="dialogVisible"></dialogVue>
 </template>
 
 <script setup lang='ts'>
@@ -42,7 +43,7 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { useI18n } from 'vue-i18n';
 import dialogVue from './dialog.vue';
 
-const i18n =useI18n();
+const i18n = useI18n();
 const queryForm = reactive({
   query: '',
   pagenum: 1,
@@ -74,34 +75,34 @@ const handleAddGoods = () => {
 }
 const handleDeleteGoods = (row) => {
   ElMessageBox.confirm(
-        i18n.t('dialog.deleteGoods'),
-        'Warning',
-        {
-            confirmButtonText: i18n.t('driver.doneBtnText'),
-            cancelButtonText: i18n.t('driver.closeBtnText'),
-            type: 'warning',
-        }
-    )
-        .then(async () => {
-            await deleteGoods(row.goods_id)
-            initGoods();
-            ElMessage({
-                type: 'success',
-                message: 'Delete completed',
-            })
-        })
-        .catch(() => {
-            ElMessage({
-                type: 'info',
-                message: 'Delete canceled',
-            })
-        })
+    i18n.t('dialog.deleteGoods'),
+    'Warning',
+    {
+      confirmButtonText: i18n.t('driver.doneBtnText'),
+      cancelButtonText: i18n.t('driver.closeBtnText'),
+      type: 'warning',
+    }
+  )
+    .then(async () => {
+      await deleteGoods(row.goods_id)
+      initGoods();
+      ElMessage({
+        type: 'success',
+        message: 'Delete completed',
+      })
+    })
+    .catch(() => {
+      ElMessage({
+        type: 'info',
+        message: 'Delete canceled',
+      })
+    })
 }
-const handleDialog = (value)=>{
+const handleDialog = (value) => {
   dialogVisible.value = value
-  
+
 }
-const handleEditGoods = (row)=>{
+const handleEditGoods = (row) => {
   dialogVisible.value = true
   goodsId.value = row.goods_id;
 }
@@ -115,4 +116,5 @@ watch(() => queryForm.query, () => {
 </script>
 
 <style lang="scss" scoped>
+
 </style>

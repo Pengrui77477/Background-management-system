@@ -32,8 +32,10 @@ const route = useRoute();
 const iconList = reactive(['user', 'setting', 'shop', 'tickets', 'pie-chart']);
 const icon = ref('menu');
 const menusList = reactive([]);
+// console.log(route);
+// console.log(route.path);
 
-const defaultActive = ref(route.matched[1].path);
+const defaultActive = ref(route.path);
 const initMenuList = async () => {
     //menusList = await menuList
     //直接赋值，是行不通的
@@ -42,7 +44,8 @@ const initMenuList = async () => {
 initMenuList();
 watch(route,()=>{
     
-    defaultActive.value = route.matched[route.matched.length - 1].path || null;
+    // defaultActive.value = route.matched[route.matched.length - 1].path || null;
+    defaultActive.value = route.path || null;
     console.log(defaultActive.value);
 },{deep:true})
 

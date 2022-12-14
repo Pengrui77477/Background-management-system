@@ -1,21 +1,25 @@
 <template>
     <div class="login-container">
+
         <el-form :model="form" class="login-form" :rules="rules" ref="ruleFormRef">
             <div class="title-container">
-                <h3 class="title"> {{$t('login.title')}}</h3>
+                <h3 class="title"> {{ $t('login.title') }}</h3>
             </div>
-            <el-form-item prop="username">
-                <svg-icon icon="user" class="svg-container"></svg-icon>
-                <el-input v-model="form.username" :autosize="true" />
-            </el-form-item>
+            <el-card>
+                <el-form-item prop="username">
+                    <svg-icon icon="user" class="svg-container"></svg-icon>
+                    <el-input v-model="form.username" :autosize="true" />
+                </el-form-item>
 
-            <el-form-item prop="password">
-                <svg-icon icon="password" class="svg-container"></svg-icon>
-                <el-input v-model="form.password" :type="passwordType" />
-                <svg-icon :icon="passwordType === 'password' ? 'eye' : 'eye-open'" @click="changeEye"
-                    style="cursor:pointer"></svg-icon>
-            </el-form-item>
-            <el-button type="primary" class="login-button" @click="handleLogin(ruleFormRef)">{{$t('login.btnTitle')}}</el-button>
+                <el-form-item prop="password">
+                    <svg-icon icon="password" class="svg-container"></svg-icon>
+                    <el-input v-model="form.password" :type="passwordType" />
+                    <svg-icon :icon="passwordType === 'password' ? 'eye' : 'eye-open'" @click="changeEye"
+                        style="cursor:pointer"></svg-icon>
+                </el-form-item>
+                <el-button type="primary" class="login-button" @click="handleLogin(ruleFormRef)">
+                    {{ $t('login.btnTitle') }}</el-button>
+            </el-card>
         </el-form>
     </div>
 </template>
@@ -54,7 +58,7 @@ const rules = reactive<FormRules>({
     ]
 })
 const handleLogin = async (formEl: FormInstance | undefined) => {
-    
+
     if (!formEl) return
     await formEl.validate(async (valid, fields) => {
         if (valid) {
@@ -87,6 +91,7 @@ $cursor: #fff;
     min-height: 100%;
     width: 100%;
     overflow: hidden;
+    background: center/cover url('@/assets/img/0.0.jpg');
 
     .login-form {
         position: relative;

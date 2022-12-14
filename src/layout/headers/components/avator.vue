@@ -6,7 +6,7 @@
             </span>
             <template #dropdown>
                 <el-dropdown-menu>
-                    <el-dropdown-item @click="logout">退出</el-dropdown-item>
+                    <el-dropdown-item @click="app.logout()">退出</el-dropdown-item>
                 </el-dropdown-menu>
             </template>
         </el-dropdown>
@@ -18,9 +18,6 @@
 import useStore from '@/stores/index';
 const { app } = useStore();
 
-const logout =()=>{
-    app.logout()
-}
 </script>
 
 <style scoped lang='scss'>

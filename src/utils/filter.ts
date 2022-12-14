@@ -9,15 +9,15 @@ export const filterTimes = (date, format = 'YYYY-MM-DD') => {
     }
 }
 
-export const isNull = (date) => {
-    if (!date) return true;
-    if (JSON.stringify(date) === '{}') return true;
-    if (JSON.stringify(date) === '[]') return true;
+export const isNull = (data:any) => {
+    if (!data) return true;
+    if (JSON.stringify(data) === '{}') return true;
+    if (JSON.stringify(data) === '[]') return true;
 }
 
 export const debounce = (func: Function, delay: number) => {
     let timer: NodeJS.Timeout;
-    return function (...args) {
+    return function (...args: any) {
         clearTimeout(timer);
         timer = setTimeout(() => {
             func(args);
